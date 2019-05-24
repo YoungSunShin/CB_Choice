@@ -38,10 +38,12 @@
             // 
             this.cbList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbList.FormattingEnabled = true;
+            this.cbList.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.cbList.Location = new System.Drawing.Point(13, 13);
             this.cbList.Name = "cbList";
             this.cbList.Size = new System.Drawing.Size(222, 20);
             this.cbList.TabIndex = 0;
+            this.cbList.SelectedIndexChanged += new System.EventHandler(this.CbList_SelectedIndexChanged);
             // 
             // txtList
             // 
@@ -49,6 +51,7 @@
             this.txtList.Name = "txtList";
             this.txtList.Size = new System.Drawing.Size(222, 21);
             this.txtList.TabIndex = 1;
+            this.txtList.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtList_KeyPress);
             // 
             // btnAdd
             // 
@@ -58,6 +61,7 @@
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "추가";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // lblResult
             // 
@@ -81,6 +85,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "메뉴 선택 추가";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
